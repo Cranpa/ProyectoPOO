@@ -21,6 +21,10 @@ public class Inicio extends javax.swing.JFrame {
         combo.addItem("Ver clinicas");
         combo.addItem("Editar datos personales");
     }
+    public static int hola(){
+    
+    return 0;
+    }
     public static ArrayList<Usuario> usuarios = new ArrayList();
 
     @SuppressWarnings("unchecked")
