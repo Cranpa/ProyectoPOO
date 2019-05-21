@@ -10,5 +10,5 @@ package proyectopoo;
  * @author cris1
  */
 public enum TipoServicio {
-     Baño, Paseo, Veterinario;
+     Baño, Paseo, Veterinario, val;
 }
