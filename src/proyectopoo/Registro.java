@@ -135,9 +135,8 @@ public class Registro extends javax.swing.JFrame {
                             .addComponent(itemdoc, 0, 82, Short.MAX_VALUE)
                             .addComponent(tel, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
                             .addComponent(fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(con, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                                .addComponent(usu, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(con, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                            .addComponent(usu)
                             .addComponent(nom)
                             .addComponent(doc, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(18, 18, 18)
@@ -192,9 +191,9 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(usu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(con, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(con, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
                 .addGap(41, 41, 41)
                 .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(56, Short.MAX_VALUE))
@@ -212,7 +211,7 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_itemdocActionPerformed
 
     private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
-        if (!nom.getText().equals("") && !doc.getText().equals("") && !tel.getText().equals("") && !fecha.getText().equals("") && !usu.getText().equals("") && !con.getText().equals("")) {
+          if (!nom.getText().equals("") && !doc.getText().equals("") && !tel.getText().equals("") && !fecha.getText().equals("") && !usu.getText().equals("") && !con.getText().equals("")) {
             Usuario usuar = new Usuario();
             usuar.nombre = nom.getText();
             String documento = (String) itemdoc.getSelectedItem();
@@ -243,11 +242,15 @@ public class Registro extends javax.swing.JFrame {
             } else {
                 usu.setText("");
                 iPets.usuarios.equals(usuarios);
+                Inicio.usuarios.equals(usuarios);
             }
 
         }else{
             mensaje.setText("DEBE LLENAR TODOS LOS CAMPOS");
         }
+     
+        
+       
 
     }//GEN-LAST:event_guardarActionPerformed
 

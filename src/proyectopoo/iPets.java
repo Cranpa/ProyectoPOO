@@ -13,10 +13,9 @@ public class iPets extends javax.swing.JFrame {
     public iPets() {
         initComponents();
     }
-    
-    public static ArrayList <Usuario> usuarios = new ArrayList();
 
-    
+    public static ArrayList<Usuario> usuarios = new ArrayList();
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -118,7 +117,7 @@ public class iPets extends javax.swing.JFrame {
             if (u.usuario.equals(usu)) {
                 if (u.contraseña.equals(contra)) {
                     sw = true;
-                     ini.setVisible(true);
+                    ini.setVisible(true);
                 }
             }
         }
@@ -127,7 +126,9 @@ public class iPets extends javax.swing.JFrame {
         }
         for (Usuario usuario1 : reg.usuarios) {
             System.out.println(usuario1.nombre);
+            Inicio.nombre.setText(usuario.getText());
         }
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

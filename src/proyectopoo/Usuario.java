@@ -21,5 +21,5 @@ public class Usuario {
     public String usuario;
     public String contraseña;
     public ArrayList<Servicio> serviciosRecibidos;
-    public ArrayList<Servicio> servicisPrestados;
+    public ArrayList<Servicio> servicisP;
 }
