@@ -75,9 +75,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
         Registro reg = new Registro();
-        
-        
-        
+        SolServicios ss = new SolServicios();
         String documento = (String) combo.getSelectedItem();
         if (documento.equals("Editar datos personales")) {
             for (Usuario usu : usuarios) {
@@ -85,10 +83,10 @@ public class Inicio extends javax.swing.JFrame {
                     reg.setVisible(true);
                 }
             }
-            
-            
-           
-
+        }else{
+            if (documento.equals("Solicitar servicio")) {
+                ss.setVisible(true);
+            }
         }
 
     }//GEN-LAST:event_comboActionPerformed
