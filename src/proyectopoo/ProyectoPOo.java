@@ -11,9 +11,9 @@ package proyectopoo;
  */
 public class ProyectoPOo {
 
-    /**
-     * @param args the command line arguments
-     */
+    public static int hola(){
+        return 0;
+    }
     public static void main(String[] args) {
        iPets ip = new iPets();
        ip.setVisible(true);
