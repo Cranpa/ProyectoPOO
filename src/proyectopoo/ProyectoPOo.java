@@ -17,6 +17,7 @@ public class ProyectoPOo {
     public static void main(String[] args) {
        iPets ip = new iPets();
        ip.setVisible(true);
+        System.out.println("11255456625");
     }
     
 }
