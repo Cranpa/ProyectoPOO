@@ -1,10 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
+
 package pooproyecto;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.DefaultListModel;
 
 /**
@@ -41,6 +41,13 @@ public class Clinicas extends javax.swing.JFrame {
         model.addElement("Mi Corral");
         model.addElement("Centro Clínico veterinario La 45");
         model.addElement("Vital Pets Centro veterinario");
+        this.setLocationRelativeTo(null);
+    }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/LogoHuella.png"));
+        return retValue;
     }
 
     /**
@@ -58,20 +65,31 @@ public class Clinicas extends javax.swing.JFrame {
         listaC = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         info = new javax.swing.JTextArea();
+        LogoVet = new javax.swing.JLabel();
+        LogoDog = new javax.swing.JLabel();
+        BotonSalir = new javax.swing.JButton();
+        BotonAtras = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Clinicas:");
+        jLabel1.setFont(new java.awt.Font("Yu Gothic Light", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Clínicas");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Informacion:");
+        jLabel2.setFont(new java.awt.Font("Yu Gothic Light", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Información");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, -1));
 
-        listaC.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        listaC.setBackground(new java.awt.Color(153, 0, 153));
+        listaC.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        listaC.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        listaC.setForeground(new java.awt.Color(255, 255, 255));
         listaC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listaCMouseClicked(evt);
@@ -79,43 +97,50 @@ public class Clinicas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listaC);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 47, 240, 333));
+
+        info.setBackground(new java.awt.Color(153, 0, 153));
         info.setColumns(20);
+        info.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        info.setForeground(new java.awt.Color(255, 255, 255));
         info.setRows(5);
+        info.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jScrollPane2.setViewportView(info);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(193, 193, 193))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 47, 285, 123));
+
+        LogoVet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/health-report.png"))); // NOI18N
+        getContentPane().add(LogoVet, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
+
+        LogoDog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/animal-kingdom.png"))); // NOI18N
+        getContentPane().add(LogoDog, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
+
+        BotonSalir.setBackground(new java.awt.Color(153, 0, 153));
+        BotonSalir.setFont(new java.awt.Font("Yu Gothic Light", 1, 11)); // NOI18N
+        BotonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        BotonSalir.setText("Salir");
+        BotonSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BotonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 50, -1));
+
+        BotonAtras.setBackground(new java.awt.Color(153, 0, 153));
+        BotonAtras.setFont(new java.awt.Font("Yu Gothic Light", 1, 11)); // NOI18N
+        BotonAtras.setForeground(new java.awt.Color(255, 255, 255));
+        BotonAtras.setText("Atrás");
+        BotonAtras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 50, -1));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/2FondoPoo.jpg"))); // NOI18N
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -191,6 +216,16 @@ public class Clinicas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_listaCMouseClicked
 
+    private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
+        Inicio ini = new Inicio();
+        this.setVisible(false);
+        ini.setVisible(true);
+    }//GEN-LAST:event_BotonAtrasActionPerformed
+
+    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_BotonSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -227,6 +262,11 @@ public class Clinicas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAtras;
+    private javax.swing.JButton BotonSalir;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel LogoDog;
+    private javax.swing.JLabel LogoVet;
     private javax.swing.JTextArea info;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

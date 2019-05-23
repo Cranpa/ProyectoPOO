@@ -14,4 +14,5 @@ public class Servicio {
     public String lugar;
     public int pago;
     public TipoServicio servicio;
+    public String nombre;
 }
